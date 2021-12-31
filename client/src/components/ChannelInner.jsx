@@ -56,9 +56,8 @@ const TeamChannelHeader = ({ setIsEditing }) => {
   const { client } = useChatContext();
 
   const MessagingHeader = () => {
-    const members = Object
-      .values(channel.state.members)
-      .filter(({ user }) => user.id !== client.userID);
+    const members = Object.values(channel.state.members).filter(
+      ({ user }) => user.id !== client.userID);
     const additionalMembers = members.length - 3;
 
     if (channel.type === "messaging") {
