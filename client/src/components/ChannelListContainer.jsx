@@ -38,6 +38,7 @@ const customChannelMessagingFilter = (channels) => {
 };
 
 const ChannelListContent = ({
+  setToggleConatiner,
   isCreating,
   setIsCreating,
   setCreateType,
@@ -76,10 +77,17 @@ const ChannelListContent = ({
               setIsCreating={setIsCreating}
               setCreateType={setCreateType}
               setIsEditing={setIsEditing}
+              setToggleConatiner={setToggleConatiner}
             />
           )}
           Preview={(previewProps) => (
-            <TeamChannelPreview {...previewProps} type="team" />
+            <TeamChannelPreview
+              {...previewProps}
+              type="team"
+              setToggleConatiner={setToggleConatiner}
+              setIsCreating={setIsCreating}
+              setIsEditing={setIsEditing}
+            />
           )}
         />
         <ChannelList
@@ -93,10 +101,17 @@ const ChannelListContent = ({
               setIsCreating={setIsCreating}
               setCreateType={setCreateType}
               setIsEditing={setIsEditing}
+              setToggleConatiner={setToggleConatiner}
             />
           )}
           Preview={(previewProps) => (
-            <TeamChannelPreview {...previewProps} type="messaging" />
+            <TeamChannelPreview
+              {...previewProps}
+              type="messaging"
+              setToggleConatiner={setToggleConatiner}
+              setIsCreating={setIsCreating}
+              setIsEditing={setIsEditing}
+            />
           )}
         />
       </div>
