@@ -50,7 +50,7 @@ const ChannelListContent = ({
     cookies.remove("token");
     cookies.remove("userId");
     cookies.remove("username");
-    cookies.remove("fullName");
+    cookies.remove("fullname");
     cookies.remove("avatarURL");
     cookies.remove("hashedPassword");
     cookies.remove("phoneNumber");
