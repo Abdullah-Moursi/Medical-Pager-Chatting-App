@@ -38,7 +38,7 @@ const customChannelMessagingFilter = (channels) => {
 };
 
 const ChannelListContent = ({
-  setToggleConatiner,
+  setToggleContainer,
   isCreating,
   setIsCreating,
   setCreateType,
@@ -65,7 +65,7 @@ const ChannelListContent = ({
       <SideBar logout={logout} />
       <div className="channel-list__list__wrapper">
         <CompanyHeader />
-        <ChannelSearch />
+        <ChannelSearch setToggleContainer={setToggleContainer} />
         <ChannelList
           filters={filters}
           channelRenderFilterFn={customChannelTeamFilter}
@@ -77,14 +77,14 @@ const ChannelListContent = ({
               setIsCreating={setIsCreating}
               setCreateType={setCreateType}
               setIsEditing={setIsEditing}
-              setToggleConatiner={setToggleConatiner}
+              setToggleContainer={setToggleContainer}
             />
           )}
           Preview={(previewProps) => (
             <TeamChannelPreview
               {...previewProps}
               type="team"
-              setToggleConatiner={setToggleConatiner}
+              setToggleContainer={setToggleContainer}
               setIsCreating={setIsCreating}
               setIsEditing={setIsEditing}
             />
@@ -101,14 +101,14 @@ const ChannelListContent = ({
               setIsCreating={setIsCreating}
               setCreateType={setCreateType}
               setIsEditing={setIsEditing}
-              setToggleConatiner={setToggleConatiner}
+              setToggleContainer={setToggleContainer}
             />
           )}
           Preview={(previewProps) => (
             <TeamChannelPreview
               {...previewProps}
               type="messaging"
-              setToggleConatiner={setToggleConatiner}
+              setToggleContainer={setToggleContainer}
               setIsCreating={setIsCreating}
               setIsEditing={setIsEditing}
             />
@@ -124,7 +124,7 @@ const ChannelListContainer = ({
   setCreateType,
   setIsEditing,
 }) => {
-  const [toggleConatiner, setToggleConatiner] = useState(false);
+  const [toggleConatiner, setToggleContainer] = useState(false);
 
   return (
     <>
@@ -146,14 +146,14 @@ const ChannelListContainer = ({
         <div
           className="channel-list__container-toggle"
           onClick={() =>
-            setToggleConatiner((prevToggleConatiner) => !prevToggleConatiner)
+            setToggleContainer((prevToggleConatiner) => !prevToggleConatiner)
           }
         >
           <ChannelListContent
             setIsCreating={setIsCreating}
             setCreateType={setCreateType}
             setIsEditing={setIsEditing}
-            setToggleConatiner={setToggleConatiner}
+            setToggleContainer={setToggleContainer}
           />
         </div>
       </div>
