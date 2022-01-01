@@ -4,7 +4,7 @@ import { useChatContext } from "stream-chat-react";
 import { UserList } from "./";
 import { CloseCreateChannel } from "../assets";
 
-const ChannelNameInput = ({ channelName, setChannelName }) => {
+const ChannelNameInput = ({ channelName ="", setChannelName }) => {
   const handleChange = (e) => {
     e.preventDefault();
 
